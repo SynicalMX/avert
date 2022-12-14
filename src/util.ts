@@ -13,7 +13,11 @@ namespace Utils {
     }
 
     export function log(...args): void {
-        console.log(chalk.blueBright("avert"), ...args);
+        let res = ''
+        const text = args.forEach(arg => {
+            res += arg + ' '
+        });
+        process.stdout.write(chalk.blueBright("avert") + ' ' + text);
     }
 }
 

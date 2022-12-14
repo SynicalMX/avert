@@ -13,7 +13,11 @@ var Utils;
     }
     Utils.prompt = prompt;
     function log(...args) {
-        console.log(chalk.blueBright("avert"), ...args);
+        let res = '';
+        const text = args.forEach(arg => {
+            res += arg + ' ';
+        });
+        process.stdout.write(chalk.blueBright("avert") + ' ' + text);
     }
     Utils.log = log;
 })(Utils || (Utils = {}));
